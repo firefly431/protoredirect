@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Protobowl Redirector",
+  "version": "1.0",
+  "description": "Redirects requests to neotonic.github.io",
+  "background": {
+    "scripts": ["redirect.js"],
+    "persistent": true
+  },
+  "permissions": ["storage", "webRequest", "webRequestBlocking", "tabs", "*://*.protobowl.com/*", "*://*.github.io/*", "*://*.github.com/*"]
+}
