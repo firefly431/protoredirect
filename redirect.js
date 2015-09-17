@@ -2,6 +2,7 @@ commit = "5532cdc4d6b3dd6bfe890fe7209fb998b35f4c05";
 
 // get latest commit every week
 chrome.storage.local.get(["update", "commit"], function(items) {
+    commit = items["commit"] || commit;
     if (items["update"]) {
         var ud = new Date(items["update"]);
         var today = new Date();
@@ -25,7 +26,6 @@ chrome.storage.local.get(["update", "commit"], function(items) {
             xhr.send();
         }
     } else {
-        commit = items["commit"] || commit;
         chrome.storage.local.set({
             "update": (new Date()).toString()
         });
